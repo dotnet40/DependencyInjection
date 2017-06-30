@@ -36,13 +36,13 @@ namespace Microsoft.Extensions.DependencyInjection.Tests
 
         private static bool IsGenericIEnumerable(Type type)
         {
-            return type.GetTypeInfo().IsGenericType &&
+            return IntrospectionExtensions.GetTypeInfo(type).IsGenericType &&
                    type.GetGenericTypeDefinition() == typeof(IEnumerable<>);
         }
 
         private static Type FirstGenericArgument(Type type)
         {
-            return type.GetTypeInfo().GenericTypeArguments.Single();
+            return IntrospectionExtensions.GetTypeInfo(type).GenericTypeArguments.Single();
         }
 
         private static IList CreateEmptyList(Type innerType)

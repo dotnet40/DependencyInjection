@@ -87,7 +87,7 @@ namespace Microsoft.Extensions.DependencyInjection
             {
                 if (Interlocked.Increment(ref callCount) == 2)
                 {
-                    Task.Run(() =>
+                    Task.Factory.StartNew(() =>
                     {
                         var realizedService = new CallSiteExpressionBuilder(_callSiteRuntimeResolver)
                             .Build(callSite);

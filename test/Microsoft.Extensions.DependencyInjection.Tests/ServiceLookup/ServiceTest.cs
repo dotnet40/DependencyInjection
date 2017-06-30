@@ -407,7 +407,7 @@ namespace Microsoft.Extensions.DependencyInjection.ServiceLookup
                 .Select(p => p.ParameterType);
 
         private static ConstructorInfo GetConstructor(Type type, Type[] parameterTypes) =>
-            type.GetTypeInfo().DeclaredConstructors.First(
+            IntrospectionExtensions.GetTypeInfo(type).DeclaredConstructors.First(
                 c => Enumerable.SequenceEqual(
                     c.GetParameters().Select(p => p.ParameterType),
                     parameterTypes));

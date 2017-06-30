@@ -3,6 +3,7 @@
 
 using System;
 using System.Diagnostics;
+using System.Reflection;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
@@ -116,7 +117,7 @@ namespace Microsoft.Extensions.DependencyInjection
             }
             else if (ImplementationFactory != null)
             {
-                var typeArguments = ImplementationFactory.GetType().GenericTypeArguments;
+                var typeArguments = ImplementationFactory.GetType().GetTypeInfo().GenericTypeArguments;
 
                 Debug.Assert(typeArguments.Length == 2);
 

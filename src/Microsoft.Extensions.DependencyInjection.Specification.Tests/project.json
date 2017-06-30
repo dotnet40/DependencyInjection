@@ -22,6 +22,9 @@
     "xmlDoc": true
   },
   "frameworks": {
-    "netstandard1.1": {}
+    "net45": {
+      "dependencies": {
+      }
+    }
   }
 }

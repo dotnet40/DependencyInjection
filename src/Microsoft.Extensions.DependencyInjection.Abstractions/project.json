@@ -4,7 +4,7 @@
   "packOptions": {
     "repository": {
       "type": "git",
-      "url": "git://github.com/aspnet/dependencyinjection"
+      "url": "git://github.com/dotnet40/dependencyinjection"
     },
     "tags": [
       "dependencyinjection",
@@ -12,6 +12,9 @@
     ]
   },
   "buildOptions": {
+    "compile": {
+      "includeFiles": [ "../ReflectionExtensions.cs", "../ExceptionDispatchInfo.cs" ]
+    },
     "warningsAsErrors": true,
     "keyFile": "../../tools/Key.snk",
     "nowarn": [
@@ -23,13 +26,11 @@
     "Microsoft.Extensions.ActivatorUtilities.Sources": {
       "type": "build",
       "version": "1.1.1"
-    },
-    "NETStandard.Library": "1.6.1"
+    }
   },
   "frameworks": {
-    "netstandard1.0": {
+    "net40": {
       "dependencies": {
-        "System.ComponentModel": "4.3.0"
       }
     }
   }

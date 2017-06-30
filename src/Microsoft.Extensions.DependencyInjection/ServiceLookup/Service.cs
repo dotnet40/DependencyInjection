@@ -135,7 +135,7 @@ namespace Microsoft.Extensions.DependencyInjection.ServiceLookup
             {
                 var callSite = provider.GetServiceCallSite(parameters[index].ParameterType, callSiteChain);
 
-                if (callSite == null && parameters[index].HasDefaultValue)
+                if (callSite == null && parameters[index].GetHasDefaultValue())
                 {
                     callSite = new ConstantCallSite(parameters[index].DefaultValue);
                 }
